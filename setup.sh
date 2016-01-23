@@ -48,7 +48,9 @@ rm -rf powerlinefonts
 
 #zsh
 $sudo apt-get install -y zsh
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s /bin/zsh
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="rkj-repos"/g' ~/.zshrc
 
 #vim
