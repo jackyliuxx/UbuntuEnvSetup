@@ -6,11 +6,11 @@ git_email="jackyliuxx@gamil.com"
 
 
 sudo=""
-if [ $(id -u) != 0 ];then
+if [[ $(id -u) -ne 0 ]];then
     sudo="sudo"
 fi
 
-if [ $install_gcc_5 == "YES" ];then
+if [[ $install_gcc_5 == "YES" ]];then
     $sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 fi
 
@@ -19,7 +19,7 @@ $sudo apt-get update
 $sudo apt-get install -y wget curl build-essential cmake python-dev python3 python3-dev python3-pip mysql-client libmysqlclient-dev clang tmux
 
 #clang-3.6
-if [ $install_clang_36 == "YES" ];then
+if [[ $install_clang_36 == "YES" ]];then
     $sudo apt-get install -y clang-3.6
     $sudo rm -f /usr/bin/clang /usr/bin/clang++
     $sudo ln -s /usr/bin/clang-3.6 /usr/bin/clang
@@ -27,7 +27,7 @@ if [ $install_clang_36 == "YES" ];then
 fi
 
 #g++ 5
-if [ $install_gcc_5 == "YES" ];then
+if [[ $install_gcc_5 == "YES" ]];then
     $sudo apt-get install -y g++-5
     $sudo rm -f /usr/bin/gcc /usr/bin/g++
     $sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc
