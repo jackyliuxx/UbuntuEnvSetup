@@ -46,6 +46,10 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="rkj-repos"/g' ~/.zshrc
 sed -i 's/plugins=(git)/plugins=(git pip)/g' ~/.zshrc
 echo 'alias tmux="TERM=xterm-256color tmux"' >> ~/.zshrc
 
+#nodejs
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 #vim
 git clone https://github.com/jackyliuxx/.vim.git ~/.vim
 ~/.vim/setup.sh
