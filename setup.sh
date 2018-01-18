@@ -10,7 +10,18 @@ fi
 
 $sudo apt-get update
 
-$sudo apt-get install -y wget curl build-essential cmake python-dev python3 python3-dev python3-pip mysql-client libmysqlclient-dev clang tmux
+$sudo apt-get install -y wget \
+                         curl \
+                         build-essential \
+                         cmake \
+                         python-dev \
+                         python3 \
+                         python3-dev \
+                         python3-pip \
+                         mysql-client \
+                         libmysqlclient-dev \
+                         clang \
+                         tmux
 
 #git
 $sudo apt-get install -y git
@@ -20,9 +31,11 @@ git config --global core.editor vim
 git config --global push.default simple
 
 #powerline fonts
-git clone https://github.com/powerline/fonts.git ./powerlinefonts
-./powerlinefonts/install.sh
-rm -rf powerlinefonts
+$sudo apt-get install -y fonts-powerline
+
+#tmux
+git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+echo 'source-file "${HOME}/.tmux-themepack/powerline/double/yellow.tmuxtheme"' > ~/.tmux.conf
 
 #zsh
 $sudo apt-get install -y zsh
@@ -30,6 +43,8 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="rkj-repos"/g' ~/.zshrc
+sed -i 's/plugins=(git)/plugins=(git pip)/g' ~/.zshrc
+echo 'alias tmux="TERM=xterm-256color tmux"' >> ~/.zshrc
 
 #vim
 git clone https://github.com/jackyliuxx/.vim.git ~/.vim
