@@ -50,7 +50,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="rkj-repos"/g' ~/.zshrc
-sed -i 's/plugins=(git)/plugins=(git pip)/g' ~/.zshrc
+sed -i 's/plugins=(/plugins=(\n  pip/g' ~/.zshrc
 echo 'alias tmux="TERM=xterm-256color tmux"' >> ~/.zshrc
 
 #nodejs
