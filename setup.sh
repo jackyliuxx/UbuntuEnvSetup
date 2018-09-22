@@ -31,7 +31,14 @@ git config --global core.editor vim
 git config --global push.default simple
 
 #powerline fonts
-$sudo apt-get install -y fonts-powerline
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
 
 #tmux
 git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
