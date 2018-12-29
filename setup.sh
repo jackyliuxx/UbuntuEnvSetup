@@ -54,7 +54,7 @@ sed -i 's/^plugins=(/plugins=(\n  pip/g' ~/.zshrc
 echo 'alias tmux="TERM=xterm-256color tmux"' >> ~/.zshrc
 
 #nodejs
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 #vim
