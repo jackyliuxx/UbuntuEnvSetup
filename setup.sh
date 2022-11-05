@@ -1,6 +1,6 @@
 #!/bin/bash
-git_username="jackyliuxx"
-git_email="jackyliuxx@gamil.com"
+git_name="jackyliuxx"
+git_email="jackyliuxx@gmail.com"
 
 
 sudo=""
@@ -20,7 +20,8 @@ git config --global push.default simple
 
 #zsh
 $sudo apt-get install -y zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
+$sudo chsh "$USER" -s $(which zsh)
 sed -i 's/^ZSH_THEME="robbyrussell"/ZSH_THEME="rkj-repos"/' ~/.zshrc
 
 #vim
