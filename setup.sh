@@ -20,9 +20,7 @@ git config --global push.default simple
 
 #zsh
 $sudo apt-get install -y zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-chsh -s /bin/zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i 's/^ZSH_THEME="robbyrussell"/ZSH_THEME="rkj-repos"/' ~/.zshrc
 
 #vim
